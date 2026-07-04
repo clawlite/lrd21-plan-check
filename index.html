@@ -110,9 +110,10 @@
 
 <div class="wrap" id="app">
 <header class="top">
-  <p class="eyebrow">Ace · Antwort auf deinen Schaltplan v. 04.07.2026</p>
+  <p class="eyebrow">Ace · Antwort auf Datenblatt + Schaltplan + Original-Werksplan</p>
   <h1>Motorschutz-Nachrüstung: der interaktive Plan-Check</h1>
-  <p class="sub">Dein Entwurf ist solide — <b>Konzept 95/96 richtig, Einstellwert plausibel.</b> Hier ist der Nachrüst-Fahrplan zum Antippen, plus 4 Punkte, die noch fehlen.</p>
+  <p class="sub">Dein Entwurf ist solide — <b>Konzept 95/96 richtig, Einstellwert plausibel.</b> Hier ist der Nachrüst-Fahrplan zum Antippen, plus die Punkte, die noch offen sind.</p>
+  <p class="sub" style="margin-top:6px"><b style="color:#f0b58c">Aktualisiert 04.07.2026, 2. Fassung</b> — jetzt abgeglichen mit eurem Original-Werksplan (u.&nbsp;a. -Q1-Ausbau und Steuersicherung -S5, siehe Blatt D).</p>
   <div class="specrow">
     <span class="spec">M1 · 7,5 kW · 400 V Δ (DOL)</span>
     <span class="spec">K2 · LC1D18 (240-V-Spule)</span>
@@ -315,11 +316,15 @@
 <!-- ============ D · REVIEW ============ -->
 <section id="s-review">
   <div class="blatt"><span class="no">D</span><h2>Review: was mir an deinem Plan auffällt</h2></div>
-  <p class="lede">Ehrliches Feedback, nach Gewicht sortiert — zwei Dinge würde ich vor der Inbetriebnahme noch klären.</p>
+  <p class="lede">Ehrliches Feedback, nach Gewicht sortiert — drei Dinge würde ich vor der Inbetriebnahme noch klären. Neu nach Abgleich mit dem Original-Werksplan: die Steuersicherung.</p>
   <div class="findings">
     <details class="f">
       <summary><span class="chip warn">PRÜFEN</span> Vorsicherung: 32 A ist kein abgestimmter Kurzschlussschutz <span class="arr">▸</span></summary>
       <div class="body">Schütz + Überlastrelais schützen den <b>Motor</b>, nicht sich selbst. Für die Kombination LC1D18 + LRD21 gehört ein nach IEC 60947-4-1 koordiniertes Vorschaltorgan davor (Typ 2 = nach Kurzschluss weiter betriebsfähig). Die kundenseitige CEE-Vorsicherung mit 32 A ist dafür vermutlich zu groß — die zulässige Sicherungsgröße steht in der Schneider-Koordinationstabelle (typisch deutlich kleiner). <b>To-do:</b> Tabelle ziehen, Sicherungswert dokumentieren — gehört sowieso in deinen offenen Punkt „kundenseitige Einspeisung dokumentieren".</div>
+    </details>
+    <details class="f">
+      <summary><span class="chip warn">PRÜFEN · NEU</span> Steuersicherung -S5: im Original da, im Umbau? <span class="arr">▸</span></summary>
+      <div class="body">Euer Original-Werksplan hat eine 1-polige Steuersicherung <code>-S5 (S401M-C6, 6 A / 230 V)</code> vor dem Steuerkreis. In der Umbau-Doku taucht sie nicht auf. Wenn sie beim Umbau mit rausgeflogen ist, hängt der 240-V-Steuerkreis (Not-Halt, Taster, K2-Spule, F2:95-96) <b>ungesichert an der Phase</b> — ein Steuerkreis-Kurzschluss brennt dann Adern statt Sicherung. <b>To-do:</b> Bestand prüfen; falls fehlt: C6-Automat oder feinsicherung vor die Steuerphase, direkt am Abgriff.</div>
     </details>
     <details class="f">
       <summary><span class="chip warn">PRÜFEN</span> Reset auf MANUELL — nicht Auto <span class="arr">▸</span></summary>
@@ -362,7 +367,7 @@
 
 <footer>
   <p class="ace">ACE <em>· Personal AI Operating System</em> — im Auftrag von Murad</p>
-  <p>Erstellt am 04.07.2026 aus deinem Schaltplan (Blatt 0–4) + Live-Recherche zum LRD21 (26 Behauptungen quellen­geprüft, 6 verworfen). Wie dein eigener Plan sagt: Arbeits-/Übersichtsstand — vor Inbetriebnahme durch Elektrofachkraft prüfen und dokumentieren. Fragen, Fotos vom Schrank, Typenschild? Schick sie einfach an Murad — ich rechne dann konkret weiter.</p>
+  <p>Erstellt am 04.07.2026, 2. Fassung — aus deinem Schaltplan (Blatt 0–4), dem Original-Werksplan (Abgleich: -Q1-Ausbau, -S5-Steuersicherung, Klemmen) + Live-Recherche zum LRD21 (26 Behauptungen quellen­geprüft, 6 verworfen). Wie dein eigener Plan sagt: Arbeits-/Übersichtsstand — vor Inbetriebnahme durch Elektrofachkraft prüfen und dokumentieren. Fragen, Fotos vom Schrank, Typenschild? Schick sie einfach an Murad — ich rechne dann konkret weiter.</p>
 </footer>
 </div>
 
